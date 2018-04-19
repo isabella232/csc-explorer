@@ -7,8 +7,13 @@ import geolib from 'geolib'
 import DotLayerGL from './DotLayerGL'
 import Bubble from './Bubble'
 
-const TOKEN = 'pk.eyJ1IjoiY2FsbGlsIiwiYSI6ImNqN3V4eTVyazJqbWUzN25xdXNydzdrMXQifQ.Rsie4DpcanGTzTJgw8INWA'
+// Ideally, in the front end UI, you would want an autocomplete box to allow any user to enter their own key at run time
 
+// pk.eyJ1IjoiYWxsYW53YWxrZXIiLCJhIjoiY2phbHVlOHQ4MnZscDMycGJoaTdiaHRxOCJ9.OYLAoMVg6e3Ih4r65WJuvA
+
+// OLD TOKEN pk.eyJ1IjoiY2FsbGlsIiwiYSI6ImNqN3V4eTVyazJqbWUzN25xdXNydzdrMXQifQ.Rsie4DpcanGTzTJgw8INWA
+const TOKEN = 'pk.eyJ1IjoiYWxsYW53YWxrZXIiLCJhIjoiY2phbHVlOHQ4MnZscDMycGJoaTdiaHRxOCJ9.OYLAoMVg6e3Ih4r65WJuvA'
+// Allan Walker's Token
 const metric = 'popularity'
 // a global threshold for displaying highlighted items
 const threshold = 0.85
@@ -114,7 +119,13 @@ class Map extends Component {
     return (
       <MapGL
         {...props.viewport}
-        mapStyle={'mapbox://styles/callil/cja9xom971xnt2rsuuu9d3go1'}
+      
+     // Ideally in the web front end you would have a autocomplete box to enter the style ID
+      
+      // OLD STYLE mapbox://styles/callil/cja9xom971xnt2rsuuu9d3go1
+      
+      // This is the Manhattan LiDAR Buildings style with live traffic
+        mapStyle={'mapbox://styles/allanwalker/cjbgrhpxv2dbp2rqshlep2mmz'}
         onViewportChange={(e) => this.onViewportChange(e, this.props.mapData)}
         mapboxApiAccessToken={TOKEN}
         onClick={this.onMapClick}>
